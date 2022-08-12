@@ -11,7 +11,7 @@ import axios from "axios";
 import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
 import { formatPrice } from "../utils/helpers";
-import { useHistory, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
@@ -61,6 +61,7 @@ const CheckoutForm = () => {
 
   useEffect(() => {
     createPaymentIntent();
+    // eslint-disable-next-line
   }, []);
 
   const handleChange = async (event) => {
